@@ -13,7 +13,7 @@ def get_lineMsg(s, company, page):
 	if not date:
 		print('未能抓取到数据，请重试')
 		input('...')
-		exit()
+		run()
 
 	cruise = re.findall(re.compile(r'【(.*?)】'), content)
 	hotel = []
@@ -68,7 +68,7 @@ def get_lineMsg(s, company, page):
 
 def run():
 	s = requests.session()	
-	filename = input('请输入你想保存数据的文件名（example: xxx.csv）: ')
+	filename = input('请输入你想保存数据的文件名（format: xxx.csv）: ')
 	all_page = int(input('请输入你需要抓取的页数 : '))
 	company = input('请输入你想抓取的公司 : ')
 
